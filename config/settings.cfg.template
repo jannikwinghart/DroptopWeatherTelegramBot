@@ -1,0 +1,7 @@
+[telegram]
+name = <NAME>
+username = <USERNAME>
+token = <TOKEN>
+
+[openroute]
+apikey = <APIKEY>
