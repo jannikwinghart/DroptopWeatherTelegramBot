@@ -1,3 +1,4 @@
 python-telegram-bot
 configparser~=5.0.2
 openrouteservice~=2.3.3
+pyowm

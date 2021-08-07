@@ -22,8 +22,8 @@ class RouteWeatherEvaluatorTestCase(unittest.TestCase):
         number_of_waypoints = 10
         distance_between_waypoints_m = 3000
 
-        start_coords = routeplanner.location_to_coords(start_location)
-        end_coords = routeplanner.location_to_coords(end_location)
+        start_coords = routeplanner.location_to_coords(start_location)["coords"]
+        end_coords = routeplanner.location_to_coords(end_location)["coords"]
 
         route = routeplanner.calculate_route(start_coords=start_coords, end_coords=end_coords)
 

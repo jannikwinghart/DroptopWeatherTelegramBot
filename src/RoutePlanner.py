@@ -79,6 +79,12 @@ class RoutePlanner:
         geocode = self.client.pelias_search(
             text=location_string,
             validate=False,
+
         )
-        coords = geocode['features'][0]["geometry"]["coordinates"]
-        return coords
+
+        if len(geocode["features"]) > 0:
+            coords = geocode["features"][0]["geometry"]["coordinates"]
+            # pprint(geocode)
+            return {"coords": coords, "label": geocode["features"][0]["properties"]["label"]}
+        else:
+            return None

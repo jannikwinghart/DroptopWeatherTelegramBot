@@ -7,5 +7,6 @@ RUN pip install -r requirements.txt
 
 COPY . /opt/app
 RUN ls
+RUN ls src
 
-CMD ["python", "main.py"]
+CMD ["python", "src/main.py"]

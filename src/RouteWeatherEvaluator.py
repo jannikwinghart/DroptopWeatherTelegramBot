@@ -1,5 +1,3 @@
-from pprint import pprint
-from src import WeatherForecaster
 import math
 from datetime import datetime, timedelta
 
@@ -38,7 +36,7 @@ class RouteWeatherEvaluator:
         """
         attribute_scores = {
             "rain": 0,
-            "clouds": 0,        # todo: this
+            "clouds": 0,
             "temp": 0,
             "feels_like": 0,
             "status": 0,
@@ -113,7 +111,7 @@ class RouteWeatherEvaluator:
             waypoint_weather_scores[run_start_time] = []
             for waypoint_weather in waypoints_weather:
                 waypoint_timedelta_rounded_h = round(waypoint_weather["waypoint_metadata"]["duration"] / 60 / 60)
-                waypoint_arrival_time = start_time + timedelta(hours=waypoint_timedelta_rounded_h)
+                waypoint_arrival_time = run_start_time + timedelta(hours=waypoint_timedelta_rounded_h)
                 current_waypoint_weather = waypoint_weather["forecast"][waypoint_arrival_time]
 
                 weather_score = self.calculate_weather_score(current_waypoint_weather)
